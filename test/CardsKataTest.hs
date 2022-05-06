@@ -35,3 +35,7 @@ cardsKataTests = describe "CardsKata behaviour" $ do
   it "If both cards have trump, the big one wins" $ do
     playCards (Card Ace Spade) (Card Two Spade) (Spade) `shouldBe` "The first card won"
     playCards (Card Four Spade) (Card King Spade) (Spade) `shouldBe` "The second card won"
+
+  it "If both cards have the same suit, the big one wins" $ do
+    playCards (Card Ace Spade) (Card Two Spade) (Heart) `shouldBe` "The first card won"
+    playCards (Card Four Spade) (Card King Spade) (Heart) `shouldBe` "The second card won"
