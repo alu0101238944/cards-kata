@@ -13,4 +13,4 @@ data Card = Card {value :: CardValue,
   deriving (Show, Eq)
 
 playCards :: Card -> Card -> Suit -> String
-playCards card1 card2 trump = ""
+playCards card1 card2 trump = "Someone cheats"
