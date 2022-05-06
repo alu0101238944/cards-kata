@@ -27,4 +27,5 @@ cardsKataTests = describe "CardsKata behaviour" $ do
 
   it "If one card has trump unlike another, that one wins" $ do
     playCards (Card Ten Heart) (Card Ten Spade) (Heart) `shouldBe` "The first card won"
+    playCards (Card Ten Spade) (Card Ten Heart) (Heart) `shouldBe` "The second card won"
 
