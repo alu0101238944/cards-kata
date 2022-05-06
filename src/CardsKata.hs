@@ -1,17 +1,16 @@
 module CardsKata where
 
-cardsKata :: Int -> String
-cardsKata n = addDefault $ fizz n ++ buzz n
-  where
-    addDefault "" = show n
-    addDefault s = s
+data Suit = Spade | Heart | Club | Diamond
+  deriving (Show, Eq)
 
-fizz :: Int -> String
-fizz n
-  | n `mod` 3 == 0 = "Fizz"
-  | otherwise = ""
+data CardValue = Two | Three | Four
+    | Five | Six | Seven | Eight | Nine | Ten 
+    | Jack | Queen | King | Ace
+  deriving (Show, Eq, Ord)
 
-buzz :: Int -> String
-buzz n
-  | n `mod` 5 == 0 = "Buzz"
-  | otherwise = ""
+data Card = Card {value :: CardValue, 
+                    suit :: Suit} | Joker
+  deriving (Show, Eq)
+
+playCards :: Card -> Card -> Suit -> String
+playCards card1 card2 trump = ""
