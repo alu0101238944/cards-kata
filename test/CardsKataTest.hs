@@ -12,7 +12,7 @@ main = hspec cardsKataTests
 
   If the cards are equal, return "Someone cheats"
   If one card has trump unlike another, wins the first one.
-  If the cards have different suits (and no one has trump) return "Let"s play again"
+  If the cards have different suits (and no one has trump) return "Let's play again"
   If both cards have trump, the big one wins.
   If both cards have the same suit, the big one wins.
   As a card you can also get the string "joker" - it means this card always wins.
@@ -29,3 +29,5 @@ cardsKataTests = describe "CardsKata behaviour" $ do
     playCards (Card Ten Heart) (Card Ten Spade) (Heart) `shouldBe` "The first card won"
     playCards (Card Ten Spade) (Card Ten Heart) (Heart) `shouldBe` "The second card won"
 
+  it "If the cards have different suits and no one has trump, let's play again" $ do
+    playCards (Card Ten Spade) (Card Ten Heart) (Club) `shouldBe` "Let's play again"
