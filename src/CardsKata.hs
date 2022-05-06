@@ -13,6 +13,7 @@ data Card = Card {value :: CardValue,
   deriving (Show, Eq)
 
 playCards :: Card -> Card -> Suit -> String
-playCards card1 card2 trump 
+playCards card1@(Card value1 suit1) card2@(Card value2 suit2) trump 
   | card1 == card2 = "Someone cheats"
-  | otherwise = "The first card won"
+  | suit1 == trump = "The first card won"
+  | otherwise = "The second card won"
