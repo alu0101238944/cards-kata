@@ -24,6 +24,7 @@ cardsKataTests :: Spec
 cardsKataTests = describe "CardsKata behaviour" $ do
   it "If the cards are equal someone is cheating" $ do
     playCards (Card Ten Heart) (Card Ten Heart) (Spade) `shouldBe` "Someone cheats"
+    playCards (Joker) (Joker) (Spade) `shouldBe` "Someone cheats"
 
   it "If one card has trump unlike another, that one wins" $ do
     playCards (Card Ten Heart) (Card Ten Spade) (Heart) `shouldBe` "The first card won"
