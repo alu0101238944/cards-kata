@@ -19,3 +19,6 @@ playCards card1@(Card value1 suit1) card2@(Card value2 suit2) trump
   | suit1 == trump && suit2 /= trump || value1 > value2 = "The first card won"
   | suit2 == trump && suit1 /= trump || value2 > value1 = "The second card won"
   | otherwise = "Someone cheats"
+playCards Joker Joker trump = "Someone cheats"
+playCards Joker card2 trump = "The first card won"
+playCards card1 Joker trump = "The second card won"
