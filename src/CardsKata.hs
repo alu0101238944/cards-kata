@@ -15,7 +15,7 @@ data Card = Card {value :: CardValue,
 playCards :: Card -> Card -> Suit -> String
 playCards card1@(Card value1 suit1) card2@(Card value2 suit2) trump 
   | card1 == card2 = "Someone cheats"
+  | suit1 /= suit2 && suit1 /= trump  && suit2 /= trump = "Let's play again"
   | suit1 == trump && suit2 /= trump || value1 > value2 = "The first card won"
   | suit2 == trump && suit1 /= trump || value2 > value1 = "The second card won"
-  | suit1 /= suit2 = "Let's play again"
   | otherwise = "Someone cheats"
