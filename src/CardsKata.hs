@@ -16,4 +16,6 @@ playCards :: Card -> Card -> Suit -> String
 playCards card1@(Card value1 suit1) card2@(Card value2 suit2) trump 
   | card1 == card2 = "Someone cheats"
   | suit1 == trump = "The first card won"
-  | otherwise = "The second card won"
+  | suit2 == trump = "The second card won"
+  | suit1 /= suit2 = "Let's play again"
+  | otherwise = ""
